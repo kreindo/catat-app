@@ -38,10 +38,9 @@ class CatatInput extends Component {
   render() {
     return (
       <div>
-        <h1>Catat App</h1>
-        <form onSubmit={this.onSubmitEventHandler}>
+        <form onSubmit={this.onSubmitEventHandler} className="note-input">
           <input type="text" onChange={this.onTitleChangeEventHandler} />
-          <input type="text" onChange={this.onContentChangeEventHandler} />
+          <textarea type="text" onChange={this.onContentChangeEventHandler} />
           <button type="submit">Submit</button>
         </form>
       </div>
