@@ -1,4 +1,5 @@
-import React, { Component } from 'react';{
+import React, { Component } from 'react';
+{
 }
 class CatatInput extends Component {
   constructor(props) {
@@ -32,11 +33,11 @@ class CatatInput extends Component {
   }
   onSubmitEventHandler(event) {
     event.preventDefault();
-    this.props.addCatatan(this.state)
+    this.props.addCatatan(this.state);
   }
   render() {
     return (
-      <div style={{ backgroundColor: 'red' }}>
+      <div>
         <h1>Catat App</h1>
         <form onSubmit={this.onSubmitEventHandler}>
           <input type="text" onChange={this.onTitleChangeEventHandler} />
