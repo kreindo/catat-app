@@ -39,8 +39,17 @@ class CatatInput extends Component {
     return (
       <div>
         <form onSubmit={this.onSubmitEventHandler} className="note-input">
-          <input type="text" onChange={this.onTitleChangeEventHandler} />
-          <textarea type="text" onChange={this.onContentChangeEventHandler} />
+          <input
+            type="text"
+            onChange={this.onTitleChangeEventHandler}
+            placeholder="enter title here..."
+          />
+          <textarea
+            type="text"
+            onChange={this.onContentChangeEventHandler}
+            placeholder="enter note here..."
+            
+          />
           <button type="submit">Submit</button>
         </form>
       </div>
