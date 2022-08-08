@@ -43,6 +43,7 @@ class CatatInput extends Component {
             type="text"
             onChange={this.onTitleChangeEventHandler}
             placeholder="enter title here..."
+            required
           />
           <textarea
             type="text"
