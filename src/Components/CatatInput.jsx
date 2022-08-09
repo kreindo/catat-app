@@ -7,13 +7,14 @@ class CatatInput extends Component {
 
     this.state = {
       title: '',
-      content: '',
+      content: null,
     };
 
     this.onTitleChangeEventHandler = this.onTitleChangeEventHandler.bind(this);
     this.onContentChangeEventHandler =
       this.onContentChangeEventHandler.bind(this);
     this.onSubmitEventHandler = this.onSubmitEventHandler.bind(this);
+    this.textLogic = this.textLogic.bind(this);
   }
 
   onTitleChangeEventHandler(event) {
@@ -25,16 +26,37 @@ class CatatInput extends Component {
   }
 
   onContentChangeEventHandler(event) {
-    this.setState(() => {
-      return {
-        content: event.target.value,
-      };
-    });
+    if (this.state.content === 'minecraft') {
+      this.setState(() => {
+        return { content: this.state.content };
+      });
+    } else {
+      this.setState(() => {
+        return {
+          content: event.target.value,
+        };
+      });
+    }
   }
   onSubmitEventHandler(event) {
     event.preventDefault();
     this.props.addCatatan(this.state);
   }
+
+  textLogic(event) {}
+
+  //     if (this.state.content === `minecraft`) {
+  //     return this.setState(() => {
+
+  //         this.state.content = this.state.content.length();
+  //       } else {
+  //         return this.state.content;
+  //       }
+  //     }
+  //     }
+  //     });
+  //   });
+  // }
   render() {
     return (
       <div>
@@ -49,8 +71,10 @@ class CatatInput extends Component {
             type="text"
             onChange={this.onContentChangeEventHandler}
             placeholder="enter note here..."
-            
           />
+          <br />
+          <p>{this.state.content}</p>
+
           <button type="submit">Submit</button>
         </form>
       </div>
