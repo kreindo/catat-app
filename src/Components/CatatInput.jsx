@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-{
+import React, { Component } from 'react';{
 }
 class CatatInput extends Component {
   constructor(props) {
@@ -14,7 +13,6 @@ class CatatInput extends Component {
     this.onContentChangeEventHandler =
       this.onContentChangeEventHandler.bind(this);
     this.onSubmitEventHandler = this.onSubmitEventHandler.bind(this);
-    this.textLogic = this.textLogic.bind(this);
   }
 
   onTitleChangeEventHandler(event) {
@@ -26,17 +24,11 @@ class CatatInput extends Component {
   }
 
   onContentChangeEventHandler(event) {
-    if (this.state.content === 'minecraft') {
-      this.setState(() => {
-        return { content: this.state.content };
-      });
-    } else {
-      this.setState(() => {
-        return {
-          content: event.target.value,
-        };
-      });
-    }
+    this.setState(() => {
+      return {
+        content: event.target.value,
+      };
+    });
   }
   onSubmitEventHandler(event) {
     event.preventDefault();
@@ -73,7 +65,8 @@ class CatatInput extends Component {
             placeholder="enter note here..."
           />
           <br />
-          <p>{this.state.content}</p>
+          <p>{this.state.title && `Title state: ${this.state.title}`}</p>
+          <p>{this.state.content && `Content state: ${this.state.content}`}</p>
 
           <button type="submit">Submit</button>
         </form>
