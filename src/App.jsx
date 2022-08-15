@@ -1,5 +1,8 @@
-import React from 'react';import CatatInput from './Components/CatatInput';
+import React from 'react';
+import ArchiveList from './Components/ArchiveList/ArchiveList';
+import CatatInput from './Components/CatatInput';
 import CatatList from './Components/CatatList/CatatList';
+
 import Header from './Components/Header';
 import { getInitialData, showFormattedDate } from './utils/index';
 
@@ -9,6 +12,7 @@ class CatatApp extends React.Component {
 
     this.state = {
       catatans: getInitialData(),
+      // archivedCatatans: {},
     };
 
     this.onAddCatatanHandler = this.onAddCatatanHandler.bind(this);
@@ -20,7 +24,21 @@ class CatatApp extends React.Component {
     this.setState({ catatans });
   }
 
-  // onArchiveHandler(id) {}
+  // onArchiveHandler(id) {
+  //   const archivedCatatans = this.state.catatans.filter(
+  //     (catatan) => catatan.id !== id
+  //   );
+  //   this.setState(() => {
+
+  //   });
+  // }
+
+  // onUnarchiveHandler(id) {
+  //   const catatans = this.state.archivedCatatans.filter(
+  //     (catatan) => catatan.id !== id
+  //   );
+  //   this.setState({ catatans });
+  // }
 
   onAddCatatanHandler({ title, content }) {
     this.setState((prevState) => {
@@ -32,6 +50,7 @@ class CatatApp extends React.Component {
             title,
             content,
             // timestamp: new Date(),
+            // isArchived: false,
             timestamp: showFormattedDate(new Date()),
           },
         ],
@@ -48,7 +67,13 @@ class CatatApp extends React.Component {
           <CatatList
             catatans={this.state.catatans}
             onDelete={this.onDeleteHandler}
+            onArchive={this.onArchiveHandler}
           />
+          {/* <ArchiveList
+            archivedCatatans={this.state.archivedCatatans}
+            onDelete={this.onDeleteHandler}
+            onUnarchive={this.onUnarchiveHandler}
+          /> */}
         </div>
       </div>
     );
