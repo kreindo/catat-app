@@ -1,9 +1,8 @@
-import React from 'react';
-import { showFormattedDate } from '../../utils';
+import React from 'react';import { showFormattedDate } from '../../utils';
 import CatatItem from '../CatatItem/CatatItem';
 
 const ContactList = (props) => {
-  const { catatans, onDelete, onArchive, isArchived } = props;
+  const { catatans, onDelete } = props;
   return (
     <div className="notes-list">
       {catatans.map((catatan) => (

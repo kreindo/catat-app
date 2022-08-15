@@ -1,5 +1,4 @@
-import React, { Component } from 'react';{
-}
+import React, { Component } from 'react';
 class CatatInput extends Component {
   constructor(props) {
     super(props);

@@ -1,5 +1,4 @@
-import React from 'react';
-import ArchiveList from './Components/ArchiveList/ArchiveList';
+import React from 'react';// import ArchiveList from './Components/ArchiveList/ArchiveList';
 import CatatInput from './Components/CatatInput';
 import CatatList from './Components/CatatList/CatatList';
 
