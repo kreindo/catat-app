@@ -1,9 +1,11 @@
-import React from 'react';
-const Header = () => {
+import React from 'react';const Header = () => {
   return (
-    <div className="note-app__header">
-      <h1 >Catat App</h1>
-    </div>
+    <>
+      <div className="note-app__header"></div>
+      <h2 style={{ textAlign: 'center', marginTop: '40px' }} className>
+        Catat App
+      </h2>
+    </>
   );
 };
 

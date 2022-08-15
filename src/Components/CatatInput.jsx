@@ -6,7 +6,7 @@ class CatatInput extends Component {
 
     this.state = {
       title: '',
-      content: null,
+      content: '',
     };
 
     this.onTitleChangeEventHandler = this.onTitleChangeEventHandler.bind(this);
@@ -32,45 +32,28 @@ class CatatInput extends Component {
   }
   onSubmitEventHandler(event) {
     event.preventDefault();
+    console.log('clicked');
     this.props.addCatatan(this.state);
   }
 
-  textLogic(event) {}
-
-  //     if (this.state.content === `minecraft`) {
-  //     return this.setState(() => {
-
-  //         this.state.content = this.state.content.length();
-  //       } else {
-  //         return this.state.content;
-  //       }
-  //     }
-  //     }
-  //     });
-  //   });
-  // }
   render() {
     return (
-      <div>
-        <form onSubmit={this.onSubmitEventHandler} className="note-input">
-          <input
-            type="text"
-            onChange={this.onTitleChangeEventHandler}
-            placeholder="enter title here..."
-            required
-          />
-          <textarea
-            type="text"
-            onChange={this.onContentChangeEventHandler}
-            placeholder="enter note here..."
-          />
-          <br />
-          <p>{this.state.title && `Title state: ${this.state.title}`}</p>
-          <p>{this.state.content && `Content state: ${this.state.content}`}</p>
+      <form onSubmit={this.onSubmitEventHandler} className="note-input">
+        <input
+          type="text"
+          onChange={this.onTitleChangeEventHandler}
+          placeholder="enter title here..."
+          required
+        />
+        <textarea
+          type="text"
+          onChange={this.onContentChangeEventHandler}
+          placeholder="enter note here..."
+        />
+        <br />
 
-          <button type="submit">Submit</button>
-        </form>
-      </div>
+        <button type="submit">Submit</button>
+      </form>
     );
   }
 }
