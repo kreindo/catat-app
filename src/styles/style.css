@@ -102,9 +102,18 @@ textarea::placeholder {
 
 .notes-list__empty-message {
   text-align: center;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  background-color: #202124;
+  padding: 20px 460px;
   color: #aaa;
 }
 
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .note-item {
   border: 1px solid #aaa;
   border-radius: 4px;
